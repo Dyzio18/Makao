@@ -1,0 +1,12 @@
+# Ignore files
+/node_modules/
+/dist
+/public/client.bundle.js
+.eslintcache
+# Logs
+logs
+*.log
+npm-debug.log*
+# IDE
+.idea/**
+/.idea/
