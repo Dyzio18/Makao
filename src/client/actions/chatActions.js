@@ -1,6 +1,3 @@
-const chatAction = {
-    CREATE_USER = "CREATE_USER",
+const CREATE_USER = "CREATE_USER";
 
-};
-
-export default  chatAction;
+export {CREATE_USER};

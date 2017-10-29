@@ -1,0 +1,16 @@
+.message {
+  margin:5px;
+  padding: 5px;
+  color: $light1;
+  border-radius: $radius;
+  word-wrap: break-word;
+
+}
+
+.message__from-other {
+  background: $light2;
+
+}
+.message__from-user {
+  background: $primary;
+}

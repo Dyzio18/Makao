@@ -1,0 +1,15 @@
+$primary: #A593E0;
+$secondary: #566270;
+$light1: #FFFFF3;
+$light2: #E0E3DA;
+
+$radius: 5px;
+
+
+
+@import "base/reset";
+@import "base/common"; // Body
+
+@import "components/aside";
+@import "components/messages";
+@import "components/chat";

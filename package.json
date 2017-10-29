@@ -1,7 +1,7 @@
 {
-  "name": "Makao",
+  "name": "chat_app",
   "version": "1.0.0",
-  "description": "Cards game in Makao",
+  "description": "Simple chat app using socket.io",
   "main": "./src/server/index.js",
   "scripts": {
     "start": "node dist/server/server.bundle.js",
@@ -14,8 +14,8 @@
     "build-client:watch": ".\\node_modules\\.bin\\webpack --config webpack.client.config.js --watch"
   },
   "keywords": [
-    "Makao",
-    "Cards Game"
+    "chat",
+    "Socket.io"
   ],
   "author": "patryk.nizio@gmail.com",
   "license": "MIT",
