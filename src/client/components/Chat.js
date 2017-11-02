@@ -10,7 +10,7 @@ export  default class Chat extends React.Component {
     componentDidMount() {
         const {socket} = this.props;
         socket.on('message', message => {
-            this.setState({messages: [message, ...this.state.messages]})
+            this.setState({messages: [ ...this.state.messages, message]})
         })
     };
 
@@ -22,7 +22,7 @@ export  default class Chat extends React.Component {
                 body,
                 from: 'Me'
             };
-            this.setState({messages: [message, ...this.state.messages]});
+            this.setState({messages: [...this.state.messages,message ]});
             socket.emit('message', body);
             event.target.value = ''
         }
@@ -40,8 +40,10 @@ export  default class Chat extends React.Component {
 
         return (
             <div className="chat">
-                <input type='text' placeholder='Enter a message...' onKeyUp={this.handleSubmit}/>
+                <div className="chat__title"> Pokój 2</div>
                 {messages}
+                <input className="chat__input" type='text' placeholder='Napisz wiadomość...' onKeyUp={this.handleSubmit}/>
+                <span className="chat__input--focus-border"> </span>
             </div>
         )
     }

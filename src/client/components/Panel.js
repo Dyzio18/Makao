@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Aside extends React.Component {
+export default class Panel extends React.Component {
 
     render() {
         return (
-            <section className="aside">
+            <section className="panel">
                 Chat App _
             </section>
         );

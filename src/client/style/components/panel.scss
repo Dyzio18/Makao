@@ -1,10 +1,11 @@
-.aside{
+.panel{
   position:fixed;
+  top:0;
   width: 200px;
   height: 100vh;
   padding: 15px;
   float: left;
-  background: $secondary;
-  color: $light1;
+  background: #eee;
+  color: #566270;
 
 }
