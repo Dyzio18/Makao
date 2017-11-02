@@ -5,7 +5,7 @@ export default class Aside extends React.Component {
     render() {
         return (
             <section className="aside">
-                Hello World!
+                Chat App _
             </section>
         );
     }
