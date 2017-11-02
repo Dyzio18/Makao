@@ -17,13 +17,13 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 button { background-color: transparent; outline: none; border: 0; cursor: pointer; }
 
-html, body { padding: 0; margin: 0; width: 100%; min-height: 100vh; height: 100%; }
+*:focus { outline: none; }
 
-.full { width: 100%; height: 100%; }
+html, body { padding: 0; margin: 0; width: 100%; min-height: 100vh; height: 100%; font-size: 16px; font-family: 'Roboto', sans-serif; }
 
-.row { width: 100%; }
+.app { width: 100%; height: 100%; }
 
-.aside { position: fixed; width: 200px; height: 100vh; padding: 15px; float: left; background: #566270; color: #FFFFF3; }
+.panel { position: fixed; top: 0; width: 200px; height: 100vh; padding: 15px; float: left; background: #eee; color: #566270; }
 
 .message { margin: 5px; padding: 5px; color: #FFFFF3; border-radius: 5px; word-wrap: break-word; }
 
@@ -31,6 +31,17 @@ html, body { padding: 0; margin: 0; width: 100%; min-height: 100vh; height: 100%
 
 .message__from-user { background: #A593E0; }
 
-.chat { background: #FFFFF3; margin-left: 300px; height: 100%; width: 300px; max-height: 100%; }
+.chat { position: relative; height: 100%; width: 300px; max-height: 100%; padding: 15px; margin-left: 300px; margin-top: 20px; background: #FFFFF3; -webkit-box-shadow: 0px 13px 23px -6px rgba(0, 0, 0, 0.39); -moz-box-shadow: 0px 13px 23px -6px rgba(0, 0, 0, 0.39); box-shadow: 0px 13px 23px -6px rgba(0, 0, 0, 0.39); }
+
+.chat__title { font-size: 2em; padding-bottom: 4px; border-bottom: 1px solid #666; }
+
+.chat__input { border: 0; padding: 7px 0; border-bottom: 1px solid #ccc; }
+
+/* necessary to give position: relative to parent. */
+input[type="text"] { font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px; }
+
+.chat__input--focus-border { position: absolute; bottom: 0; left: 0; width: 0; height: 5px; background-color: #3399FF; transition: 0.4s; }
+
+.chat__input:focus ~ .chat__input--focus-border { width: 100%; transition: 0.4s; }
 
 /*# sourceMappingURL=style.css.map */
