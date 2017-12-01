@@ -10,9 +10,9 @@ export default class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			name: 'MAKAO',
+			name: 'Chat app',
 			socket:null,
-			user: null
+			nickname: ''
 		};
 	}
 
@@ -20,6 +20,9 @@ export default class App extends Component {
         this.initSocket();
     };
 
+    /**
+     * Socket initialization form client side
+     */
     initSocket = () => {
         const socket = io(socketUrl);
         socket.on('connect', () => {
@@ -28,11 +31,16 @@ export default class App extends Component {
         this.setState({socket});
     };
 
+    getUser = nick => {
+        console.log(nick);
+        this.setState({nickname:nick});
+    };
+
 	render() {
 		return (
 			<div className="app">
-				<Panel />
-			    <Chat socket={this.state.socket}/>
+				<Panel getUser={this.getUser} nickname={this.state.nickname} socket={this.state.socket} />
+			    <Chat socket={this.state.socket} nickname={this.state.nickname}/>
 			</div>
 
 		);

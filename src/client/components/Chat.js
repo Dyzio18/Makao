@@ -4,7 +4,13 @@ import ReactDOM from 'react-dom'
 export  default class Chat extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {messages: []}
+        this.state = {
+            messages: [],
+            roomName: 'Room'
+        }
+    }
+    componentWillMount(){
+        const {socket} = this.props;
     }
 
     componentDidMount() {
@@ -20,17 +26,17 @@ export  default class Chat extends React.Component {
         if (event.keyCode === 13 && body) {
             const message = {
                 body,
-                from: 'Me'
+                from: this.props.nickname
             };
             this.setState({messages: [...this.state.messages,message ]});
-            socket.emit('message', body);
+            socket.emit('message', message);
             event.target.value = ''
         }
     };
 
     render() {
         const messages = this.state.messages.map((message, index) => {
-            if (message.from === 'Me') {
+            if (message.from === this.props.nickname) {
                 return <p className="message message__from-user" key={index}><b>{message.from}:</b>{message.body} </p>
             }
             else {
@@ -40,7 +46,7 @@ export  default class Chat extends React.Component {
 
         return (
             <div className="chat">
-                <div className="chat__title"> Pokój 2</div>
+                <div className="chat__title"> {this.state.roomName} </div>
                 {messages}
                 <input className="chat__input" type='text' placeholder='Napisz wiadomość...' onKeyUp={this.handleSubmit}/>
                 <span className="chat__input--focus-border"> </span>
